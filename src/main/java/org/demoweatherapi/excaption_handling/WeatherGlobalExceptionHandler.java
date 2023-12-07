@@ -1,4 +1,4 @@
-package org.demoweatherapi.excaption_hadling;
+package org.demoweatherapi.excaption_handling;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class WeatherGlobalExceptionHandler {
+
     @ExceptionHandler
     public ResponseEntity<WeatherIncorrectData> handlingException(IncorrectInputData exception){
         WeatherIncorrectData data = new WeatherIncorrectData();

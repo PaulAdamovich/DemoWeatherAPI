@@ -1,8 +1,8 @@
 package org.demoweatherapi.parse;
 
 import org.demoweatherapi.communicate_third_API.Communicate;
-import org.demoweatherapi.excaption_hadling.ImpossibleParseResponse;
-import org.demoweatherapi.excaption_hadling.IncorrectInputData;
+import org.demoweatherapi.excaption_handling.ImpossibleParseResponse;
+import org.demoweatherapi.excaption_handling.IncorrectInputData;
 import org.demoweatherapi.model.AverageWeather;
 import org.demoweatherapi.entity.CurrentWeather;
 import org.json.simple.JSONArray;
@@ -11,11 +11,11 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.Iterator;
 
 @Component
 public class Parsing {
+
     @Autowired
     public Communicate communicate;
 
@@ -47,7 +47,7 @@ public class Parsing {
         return parsingForAverageWeather(weather, jo);
     }
 
-    private CurrentWeather parsingForCurrentWeather(CurrentWeather weather, JSONObject jo){
+    public CurrentWeather parsingForCurrentWeather(CurrentWeather weather, JSONObject jo){
         JSONObject location = (JSONObject) jo.get("location");
         weather.setLocation((String) location.get("tz_id"));
 
@@ -55,7 +55,7 @@ public class Parsing {
         weather.setTemperature((Double) current.get("temp_c"));
         weather.setAirHumidity((Long) current.get("humidity"));
         weather.setAirPressureMB((Double) current.get("pressure_mb"));
-        weather.setWindSpeedMH((Double) current.get("wind_kph")*1000);//converting from km/h in m/h
+        weather.setWindSpeedMH((Double) current.get("wind_kph")*1000);//parsing from km/h in m/h
 
         JSONObject condition = (JSONObject) current.get("condition");
         weather.setWeatherCondition((String) condition.get("text"));
@@ -63,7 +63,7 @@ public class Parsing {
         return weather;
     }
 
-    private AverageWeather parsingForAverageWeather(AverageWeather weather, JSONObject jo){
+    public AverageWeather parsingForAverageWeather(AverageWeather weather, JSONObject jo){
         JSONObject location = (JSONObject) jo.get("location");
         if(location == null){
             JSONObject error = (JSONObject) jo.get("error");

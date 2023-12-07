@@ -1,8 +1,7 @@
 package org.demoweatherapi.communicate_third_API;
 
-import org.demoweatherapi.excaption_hadling.ImpossibleReceiveResponse;
+import org.demoweatherapi.excaption_handling.ImpossibleReceiveResponse;
 import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;

@@ -1,4 +1,4 @@
-package org.demoweatherapi.excaption_hadling;
+package org.demoweatherapi.excaption_handling;
 
 public class WeatherIncorrectData {
     private String info;

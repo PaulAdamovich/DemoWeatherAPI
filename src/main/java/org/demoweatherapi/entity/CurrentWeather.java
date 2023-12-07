@@ -27,6 +27,10 @@ public class CurrentWeather {
     public CurrentWeather() {
     }
 
+    public CurrentWeather(long id) {
+        this.id = id;
+    }
+
     public long getId() {
         return id;
     }

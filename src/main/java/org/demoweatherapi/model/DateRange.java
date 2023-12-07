@@ -7,6 +7,11 @@ public class DateRange {
     public DateRange() {
     }
 
+    public DateRange(String from, String to) {
+        this.from = from;
+        this.to = to;
+    }
+
     public String getFrom() {
         return from;
     }
