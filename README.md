@@ -43,14 +43,10 @@
   GET /api/averageWeather
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `from`      | `string` | **Required**. Date start|
-|  `to`    |`string` |**Required**. Date end
-
-
-
-
+| Parameter | Type     | Description              |
+|:----------|:---------|:-------------------------|
+| `from`    | `string` | **Required**. Date start |
+| `to`      | `string` | **Required**. Date end   |
 
 ## Tools for Creating 
 
