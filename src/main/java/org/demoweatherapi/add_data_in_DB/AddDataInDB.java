@@ -13,7 +13,7 @@ public class AddDataInDB {
     public Parsing converting ;
     @Autowired
     public WeatherService weatherService ;
-    @Scheduled(fixedRateString = "PT1M" )
+    @Scheduled(fixedRateString = "${fixed.rates}" )
     public void addCurrentWeatherInDB(){
         weatherService.saveWeather(converting.createCurrentWeatherFromJson());
     }
