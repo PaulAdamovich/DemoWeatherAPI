@@ -11,17 +11,17 @@
 
 ## Features
 - Каждые 10 минут сохраняет данные о текущею погоде в базу данных;
-- Частоту запроса данных можно изменить;
-(В файле application.properties по адресу /src/main/resources/ переменная fixed.rates="тут вводите ваш интервал  формате длительности ISO");
+- Частоту запроса данных можно изменить
+(В файле application.properties по адресу /src/main/resources/ переменная fixed.rates="тут вводите ваш интервал в формате длительности ISO");
 - При использовании GET-запроса "/api/currentWeather" выводит данные текущей погоде в JSON формате;
 - При использовании GET-запроса "/api/averageWeather" и ввода диапозона дат в формате :  
 {
 
-“from”: “2023-12-01”, 
+“from”: “2023-12-01”,
 
 “to”: “2023-12-07” 
 
-}   
+  }   
 
 Выводит средние значение данных за указанный период. Используйте диапозон дат не превышающий более 9 дней с даты отправки GET-запроса. Бесплатная подписка больше не позволяет :)
 
@@ -37,7 +37,7 @@
 ```
 
 
-#### Get average weather from "YYYY-MM-DD" , to"YYYY-MM-DD"
+#### Get average weather from "YYYY-MM-DD" , to "YYYY-MM-DD"
 
 ```http
   GET /api/averageWeather
@@ -51,11 +51,15 @@
 ## Tools for Creating 
 
 Для создания приложения использовал :
+
 - Spring Web WEB
+  
 Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
 - Spring Data JPA SQL
+
 Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
 - MySQL Driver SQL
+  
 MySQL JDBC driver.
 
 
