@@ -89,7 +89,7 @@ CREATE TABLE weather (
 
   air_humidity BIGINT,
 
-  weather_condition VARCHAR(20),
+  weather_condition VARCHAR(50),
 
   location VARCHAR(20),
 
